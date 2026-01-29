@@ -1,0 +1,43 @@
+{
+    "name": "gember/phpstan-gember",
+    "description": "Gember Event Sourcing extensions and rules for PHPStan",
+    "license": "MIT",
+    "type": "phpstan-extension",
+    "keywords": [
+        "gember",
+        "event-sourcing",
+        "ddd",
+        "domain-driven-design",
+        "cqrs",
+        "phpstan"
+    ],
+    "authors": [
+        {
+            "name": "Jeroen de Graaf",
+            "email": "gember@jero.work",
+            "homepage": "https://jero.work"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "gember/event-sourcing": "^0.13.0",
+        "phpstan/phpstan": "^2.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "PHPStan\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "extension.neon"
+            ]
+        }
+    }
+}

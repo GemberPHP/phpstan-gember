@@ -1,0 +1,9 @@
+services:
+    -
+        class: PHPStan\Extension\DomainEventSubscriberMethodExtension
+        tags:
+            - phpstan.methods.alwaysUsedMethodExtension
+    -
+        class: PHPStan\Extension\DomainTagPropertyExtension
+        tags:
+            - phpstan.properties.readWriteExtension
