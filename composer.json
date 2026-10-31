@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": "^8.3",
-        "gember/event-sourcing": "^0.18 || ^0.19 || ^0.20",
+        "gember/event-sourcing": "^0.18 || ^0.19 || ^0.20 || ^0.21",
         "phpstan/phpstan": "^2.1"
     },
     "minimum-stability": "dev",
