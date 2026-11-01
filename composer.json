@@ -27,7 +27,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "PHPStan\\": "src/"
+            "Gember\\PHPStan\\": "src/"
         }
     },
     "config": {
