@@ -1,9 +1,9 @@
 services:
     -
-        class: PHPStan\Extension\DomainEventSubscriberMethodExtension
+        class: Gember\PHPStan\Extension\DomainEventSubscriberMethodExtension
         tags:
             - phpstan.methods.alwaysUsedMethodExtension
     -
-        class: PHPStan\Extension\DomainTagPropertyExtension
+        class: Gember\PHPStan\Extension\DomainTagPropertyExtension
         tags:
             - phpstan.properties.readWriteExtension

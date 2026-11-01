@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PHPStan\Extension;
+namespace Gember\PHPStan\Extension;
 
 use Gember\EventSourcing\UseCase\Attribute\DomainTag;
 use PHPStan\Reflection\ExtendedPropertyReflection;
@@ -12,10 +12,13 @@ final readonly class DomainTagPropertyExtension implements ReadWritePropertiesEx
 {
     public function isAlwaysRead(ExtendedPropertyReflection $property, string $propertyName): bool
     {
-        return array_any(
-            $property->getAttributes(),
-            fn($attribute) => $attribute->getName() === DomainTag::class,
-        );
+        foreach ($property->getAttributes() as $attribute) {
+            if ($attribute->getName() === DomainTag::class) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public function isAlwaysWritten(ExtendedPropertyReflection $property, string $propertyName): bool

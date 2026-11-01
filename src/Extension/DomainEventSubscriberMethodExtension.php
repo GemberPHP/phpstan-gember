@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PHPStan\Extension;
+namespace Gember\PHPStan\Extension;
 
 use Gember\EventSourcing\UseCase\Attribute\DomainEventSubscriber;
 use PHPStan\Reflection\ExtendedMethodReflection;
@@ -12,9 +12,12 @@ final readonly class DomainEventSubscriberMethodExtension implements AlwaysUsedM
 {
     public function isAlwaysUsed(ExtendedMethodReflection $methodReflection): bool
     {
-        return array_any(
-            $methodReflection->getAttributes(),
-            fn($attribute) => $attribute->getName() === DomainEventSubscriber::class,
-        );
+        foreach ($methodReflection->getAttributes() as $attribute) {
+            if ($attribute->getName() === DomainEventSubscriber::class) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
